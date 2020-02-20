@@ -2,6 +2,7 @@ import React from 'react';
 import './styles.css';
 
 class Timer extends React.Component{
+
     state = {
         timer: "25:00",
     };
@@ -25,9 +26,9 @@ class Timer extends React.Component{
 
         return(
             <div className="timer">
+                <button onClick={this.pomodoro} id="pomodoro">Pomodoro</button>
+                <button onClick={this.break} id="break">Break</button>
                 <h1 id="timer">{timer}</h1>
-                <button onClick={this.break}>aaa</button>
-                <button onClick={this.pomodoro}>bbbb</button>
             </div>
         );
     }
