@@ -5,7 +5,7 @@ import './styles.css';
 const Header = () => (
     <div className="top">
         <header id="main-header">
-            <h1>Pomodoro Watch</h1>
+            <h1>Pomodoro Timer</h1>
             <Nav></Nav>
         </header>
         

@@ -5,11 +5,11 @@ class Timer extends React.Component{
 
     state = {
         timer: "",
-        watch: new Number(), //Pomodoro 1, break 2
-        temp: new Number(), //seconds - 1500 (25 min) 300 (5min)
-        start: new Boolean(),
-        stop: new Boolean(),
-        reset: new Boolean()
+        watch: 1, //Pomodoro 1, break 2
+        temp: 1500, //seconds - 1500 (25 min) 300 (5min)
+        start: false,
+        stop: false,
+        reset: false,
     };
 
     componentDidMount(){
@@ -63,11 +63,13 @@ class Timer extends React.Component{
                 this.setState({ start:false });
 
                 if(watch === 2){ 
-                    this.pomodoro() 
+                    this.pomodoro();
+                    this.playBeep();
                     alert('Break is finished, Go to work');
                 }else{ 
                     this.break();
-                    alert('Pomodoro if finished, Take a Break!'); 
+                    this.playBeep();
+                    alert('Pomodoro is finished, Take a Break!'); 
                 }
 
                 return;
@@ -85,6 +87,11 @@ class Timer extends React.Component{
         if(watch === 1){ this.pomodoro(); }else{ this.break(); }
     }
 
+    playBeep = () => {
+        var beep = document.getElementById('beep');
+        beep.play();
+    }
+
     render(){
         
         const { timer } = this.state;
@@ -97,6 +104,10 @@ class Timer extends React.Component{
                 <button onClick={this.startTimer} className="btn-timer" id="start">Start</button>
                 <button onClick={this.stop} className="btn-timer" id="stop">Stop</button>
                 <button onClick={this.reset} className="btn-timer" id="reset">Reset</button>
+                <audio id="beep">
+                    <source src="../../audios/beep-07.mp3"></source>
+                    <source src="../../audios/beep-07.ogg"></source>
+                </audio>
             </div>
         );
     }
