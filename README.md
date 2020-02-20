@@ -1,2 +1,2 @@
-#Pomodoro Timer
-##A simple application developed in reactJS
+# Pomodoro Timer
+## A simple application developed in reactJS
