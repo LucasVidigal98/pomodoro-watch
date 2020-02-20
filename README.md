@@ -1,4 +1,4 @@
 # Pomodoro Timer
 ## A simple application developed in reactJS
 
-![Home](url="src/pomo_timer.png")
+![Home](https://github.com/LucasVidigal98/pomodoro-watch/blob/master/src/pomo_timer.png)
